@@ -21,6 +21,9 @@
     "sudo": "^1.0.3",
     "web-vitals": "^2.1.4"
   },
+  "resolutions": {
+    "styled-components": "^5"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
