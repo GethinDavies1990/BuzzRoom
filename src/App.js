@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import Header from "./features/Header";
 import {
   BrowserRouter as Router,
   Route,
@@ -13,9 +14,7 @@ function App() {
       <Router>
         <>
           <Routes>
-            <Route path='/' exact>
-              <Header />
-            </Route>
+            <Route path='/' element={<Header />}></Route>
           </Routes>
         </>
       </Router>
