@@ -1,4 +1,5 @@
 import { AccessTime, Search } from "@mui/icons-material";
+import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import { Avatar } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
@@ -14,7 +15,9 @@ function Header() {
         <Search />
         <input placeholder='Search' />
       </HeaderSearch>
-      {/* HeaderRight */}
+      <HeaderRight>
+        <HelpOutlineOutlinedIcon />
+      </HeaderRight>
     </HeaderContainer>
   );
 }
@@ -40,6 +43,10 @@ const HeaderSearch = styled.div`
     color: white;
     padding: 10px;
   }
+
+  > .MuiSvgIcon-root {
+    color: var(--buzz-room-color);
+  }
 `;
 
 const HeaderContainer = styled.div`
@@ -62,6 +69,7 @@ const HeaderLeft = styled.div`
   > .MuiSvgIcon-root {
     margin-left: auto;
     margin-right: 30px;
+    color: var(--buzz-room-color);
   }
 `;
 
@@ -69,5 +77,17 @@ const HeaderAvatar = styled(Avatar)`
   cursor: pointer;
   :hover {
     opacity: 0.8;
+  }
+`;
+
+const HeaderRight = styled.div`
+  flex: 0.3;
+  display: flex;
+  align-items: flex-end;
+
+  > .MuiSvgIcon-root {
+    margin-left: auto;
+    margin-right: 20px;
+    color: var(--buzz-room-color);
   }
 `;
