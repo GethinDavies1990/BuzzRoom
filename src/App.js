@@ -13,8 +13,8 @@ function App() {
       <Router>
         <>
           <Routes>
-            <Route path='/'>
-              <h1>This is the homepage</h1>
+            <Route path='/' exact>
+              <Header />
             </Route>
           </Routes>
         </>
