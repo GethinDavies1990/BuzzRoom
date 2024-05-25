@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import Header from "./components/Header";
-import AppBody from "./components/AppBody";
+import Sidebar from "./components/Sidebar";
 import styled from "styled-components";
 import {
   BrowserRouter as Router,
@@ -17,7 +17,7 @@ function App() {
         <>
           <Header />
           <AppBody>
-            <SideBar />
+            <Sidebar />
             <Routes>
               <Route path='/' />
               {/* Chat Component */}
@@ -31,4 +31,7 @@ function App() {
 
 export default App;
 
-const AppBody = styled.div``;
+const AppBody = styled.div`
+  display: flex;
+  height: 100vh;
+`;
