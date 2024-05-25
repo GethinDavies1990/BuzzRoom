@@ -1,6 +1,8 @@
 import React from "react";
 import "./App.css";
 import Header from "./components/Header";
+import AppBody from "./components/AppBody";
+import styled from "styled-components";
 import {
   BrowserRouter as Router,
   Route,
@@ -13,9 +15,14 @@ function App() {
     <div className='app'>
       <Router>
         <>
-          <Routes>
-            <Route path='/' element={<Header />}></Route>
-          </Routes>
+          <Header />
+          <AppBody>
+            <SideBar />
+            <Routes>
+              <Route path='/' />
+              {/* Chat Component */}
+            </Routes>
+          </AppBody>
         </>
       </Router>
     </div>
@@ -23,3 +30,5 @@ function App() {
 }
 
 export default App;
+
+const AppBody = styled.div``;

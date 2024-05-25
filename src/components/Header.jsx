@@ -13,7 +13,7 @@ function Header() {
       </HeaderLeft>
       <HeaderSearch>
         <Search />
-        <input placeholder='Search' />
+        <input placeholder='Search BuzzRoom' />
       </HeaderSearch>
       <HeaderRight>
         <HelpOutlineOutlinedIcon />
