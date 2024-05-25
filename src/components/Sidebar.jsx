@@ -1,6 +1,18 @@
-import { Create, FiberManualRecord } from "@mui/icons-material";
+import {
+  AppsOutlined,
+  BookmarkBorderOutlined,
+  Create,
+  DraftsOutlined,
+  ExpandLessOutlined,
+  FiberManualRecord,
+  FileCopyOutlined,
+  InboxOutlined,
+  InsertCommentOutlined,
+  PeopleAltOutlined,
+} from "@mui/icons-material";
 import React from "react";
 import styled from "styled-components";
+import SidebarOption from "./SidebarOption";
 
 function Sidebar() {
   return (
@@ -15,6 +27,15 @@ function Sidebar() {
         </SidebarInfo>
         <Create />
       </SidebarHeader>
+
+      <SidebarOption Icon={InsertCommentOutlined} title='Threads' />
+      <SidebarOption Icon={InboxOutlined} title='Mentions & reactions' />
+      <SidebarOption Icon={DraftsOutlined} title='Saved items' />
+      <SidebarOption Icon={BookmarkBorderOutlined} title='Channel browser' />
+      <SidebarOption Icon={PeopleAltOutlined} title='People & user groups' />
+      <SidebarOption Icon={AppsOutlined} title='Apps' />
+      <SidebarOption Icon={FileCopyOutlined} title='File Browser' />
+      <SidebarOption Icon={ExpandLessOutlined} title='Show less' />
     </SidebarContainer>
   );
 }
