@@ -1,9 +1,11 @@
 import {
+  AddCircleOutlineOutlined,
   AppsOutlined,
   BookmarkBorderOutlined,
   Create,
   DraftsOutlined,
   ExpandLessOutlined,
+  ExpandMoreOutlined,
   FiberManualRecord,
   FileCopyOutlined,
   InboxOutlined,
@@ -36,6 +38,14 @@ function Sidebar() {
       <SidebarOption Icon={AppsOutlined} title='Apps' />
       <SidebarOption Icon={FileCopyOutlined} title='File Browser' />
       <SidebarOption Icon={ExpandLessOutlined} title='Show less' />
+      <hr />
+      <SidebarOption Icon={ExpandMoreOutlined} title='Channels' />
+      <hr />
+      <SidebarOption
+        Icon={AddCircleOutlineOutlined}
+        addChannelOption
+        title='Add channel'
+      />
     </SidebarContainer>
   );
 }
@@ -46,22 +56,30 @@ const SidebarContainer = styled.div`
   color: white;
   background-color: black;
   flex: 0.3;
-  border-top: 1px solid var(--buzz-room-color);
+  border-top: 1px solid #49274b;
   max-width: 260px;
   margin-top: 60px;
+
+  > hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #49274b;
+  }
 `;
 
 const SidebarHeader = styled.div`
   display: flex;
-  border-bottom: 1px solid var(--buzz-room-color);
+  border-bottom: 1px solid #49274b;
   padding: 13px;
 
   > .MuiSvgIcon-root {
     padding: 8px;
     color: var(--buzz-room-color);
     font-size: 18px;
-    background-color: white;
+    background-color: transparent;
     border-radius: 999px;
+    border: solid 1px var(--buzz-room-color);
+    cursor: pointer;
   }
 `;
 
@@ -85,6 +103,6 @@ const SidebarInfo = styled.div`
     font-size: 14px;
     margin-top: 1px;
     margin-right: 2px;
-    color: green;
+    color: lightgreen;
   }
 `;
