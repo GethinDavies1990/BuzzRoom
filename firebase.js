@@ -1,3 +1,5 @@
+import firebase from "firebase";
+
 const firebaseConfig = {
   apiKey: "AIzaSyCdTTjjf05nJW2h6HpZqgfn4AiWluTN1bg",
   authDomain: "slack-clone-499bc.firebaseapp.com",
@@ -6,3 +8,7 @@ const firebaseConfig = {
   messagingSenderId: "790677283734",
   appId: "1:790677283734:web:1fe59adc9a28f1310d33b7",
 };
+
+
+const firebaseApp = firebase.initializeApp(firebase);
+const db = 
