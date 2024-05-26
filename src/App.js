@@ -3,8 +3,9 @@ import "./App.css";
 import Header from "./components/Header";
 import Chat from "./components/Chat";
 import Sidebar from "./components/Sidebar";
-import Login from "./components/Login";
 import styled from "styled-components";
+import Login from "./components/Login";
+import { auth } from "./firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import {
   BrowserRouter as Router,
@@ -14,6 +15,8 @@ import {
 } from "react-router-dom";
 
 function App() {
+  const [user, loading] = useAuthState(auth);
+
   return (
     <div className='app'>
       <Router>
