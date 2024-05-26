@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import Header from "./components/Header";
+import Chat from "./components/Chat";
 import Sidebar from "./components/Sidebar";
 import styled from "styled-components";
 import {
@@ -19,8 +20,7 @@ function App() {
           <AppBody>
             <Sidebar />
             <Routes>
-              <Route path='/' />
-              {/* Chat Component */}
+              <Route path='/' element={<Chat />} />
             </Routes>
           </AppBody>
         </>
