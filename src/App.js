@@ -26,7 +26,11 @@ function App() {
             src='https://assets-global.website-files.com/621c8d7ad9e04933c4e51ffb/65eba5ffa14998827c92cc01_slack-octothorpe.png'
             alt=''
           />
-          <Spinner name='ball-spin-fade-loader' color='purple' fadeIn='none' />
+          <Spinner
+            name='ball-spin-fade-loader'
+            color='var(--buzz-room-color)'
+            fadeIn='none'
+          />
         </AppLoadingContent>
       </AppLoading>
     );
@@ -60,6 +64,24 @@ const AppBody = styled.div`
   height: 100vh;
 `;
 
-const AppLoading = styled.div``;
+const AppLoading = styled.div`
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  width: 100%;
+`;
 
-const AppLoadingContent = styled.div``;
+const AppLoadingContent = styled.div`
+  text-align: center;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  > img {
+    height: 100px;
+    padding: 20px;
+    margin-bottom: 40px;
+  }
+`;
