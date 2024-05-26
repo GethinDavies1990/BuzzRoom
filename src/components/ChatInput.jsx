@@ -3,8 +3,9 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { db } from "../firebase";
 import firebase from "firebase";
+import { behavior } from "@testing-library/user-event/dist/cjs/event/behavior/registry.js";
 
-function ChatInput({ channelName, channelId }) {
+function ChatInput({ channelName, channelId, chatRef }) {
   const [input, setInput] = useState("");
 
   const sendMessage = (e) => {
@@ -18,6 +19,10 @@ function ChatInput({ channelName, channelId }) {
       message: input,
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
       user: "Gethin Davies",
+    });
+
+    chatRef.current.scrollIntoView({
+      behavior: "smooth",
     });
 
     setInput("");
@@ -59,6 +64,7 @@ const ChatInputContainer = styled.div`
     border-radius: 50px;
     padding: 20px;
     outline: none;
+    color: white;
   }
 
   > form > button {
