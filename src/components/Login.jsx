@@ -18,7 +18,7 @@ function Login() {
         />
         <h1>Sign in to BuzzRoom</h1>
         <p>buzzroom.com</p>
-        <Button onCLick={signIn}>Sign in with Google</Button>
+        <Button onClick={signIn}>Sign in with Google</Button>
       </LoginInnerContainer>
     </LoginContainer>
   );

@@ -2,13 +2,17 @@ import { AccessTime, Search } from "@mui/icons-material";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import { Avatar } from "@mui/material";
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import styled from "styled-components";
+import { auth } from "../firebase";
 
 function Header() {
+  const [user, loading] = useAuthState(auth);
+
   return (
     <HeaderContainer>
       <HeaderLeft>
-        <HeaderAvatar />
+        <HeaderAvatar alt='user?.displayName' src={user?.photoURL} />
         <AccessTime />
       </HeaderLeft>
       <HeaderSearch>
