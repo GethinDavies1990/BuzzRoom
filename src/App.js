@@ -3,7 +3,9 @@ import "./App.css";
 import Header from "./components/Header";
 import Chat from "./components/Chat";
 import Sidebar from "./components/Sidebar";
+import Login from "./components/Login";
 import styled from "styled-components";
+import { useAuthState } from "react-firebase-hooks/auth";
 import {
   BrowserRouter as Router,
   Route,
@@ -15,15 +17,19 @@ function App() {
   return (
     <div className='app'>
       <Router>
-        <>
-          <Header />
-          <AppBody>
-            <Sidebar />
-            <Routes>
-              <Route path='/' element={<Chat />} />
-            </Routes>
-          </AppBody>
-        </>
+        {!user ? (
+          <Login />
+        ) : (
+          <>
+            <Header />
+            <AppBody>
+              <Sidebar />
+              <Routes>
+                <Route path='/' element={<Chat />} />
+              </Routes>
+            </AppBody>
+          </>
+        )}
       </Router>
     </div>
   );
