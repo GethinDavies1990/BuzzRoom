@@ -41,7 +41,7 @@ function Chat() {
         </Header>
 
         <ChatMessages>
-          {roomMessages?.doc.map((doc) => {
+          {roomMessages?.docs.map((doc) => {
             const { message, timestamp, user, userImage } = doc.data();
 
             return (
